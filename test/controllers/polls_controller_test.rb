@@ -25,8 +25,8 @@ class PollsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create poll with options" do
     assert_difference("Poll.count") do
-      post polls_url, params: { 
-        poll: { 
+      post polls_url, params: {
+        poll: {
           question: "New Poll Question",
           options_attributes: [
             { text: "Option 1" },

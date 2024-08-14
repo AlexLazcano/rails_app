@@ -27,13 +27,13 @@ class PollsController < ApplicationController
   def create
     Rails.logger.debug "Creating poll with params: #{poll_params.inspect}"
     @poll = Poll.new(poll_params)
-  
+
     if @poll.valid?
       Rails.logger.debug "Poll is valid"
     else
       Rails.logger.debug "Poll is invalid: #{@poll.errors.full_messages.join(", ")}"
     end
-  
+
     respond_to do |format|
       if @poll.save
         format.html { redirect_to @poll, notice: "Poll was successfully created." }
@@ -76,7 +76,7 @@ class PollsController < ApplicationController
   # POST /polls/1/vote
   def vote
     @option = @poll.options.find(params[:option_id])
-    
+
     if @option
       @option.increment!(:votes)
       respond_to do |format|
@@ -100,6 +100,6 @@ class PollsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def poll_params
-      params.require(:poll).permit(:question, options_attributes: [:id, :text, :_destroy])
+      params.require(:poll).permit(:question, options_attributes: [ :id, :text, :_destroy ])
     end
 end
