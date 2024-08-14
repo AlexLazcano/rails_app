@@ -4,13 +4,15 @@ Rails.application.routes.draw do
 
   resources :polls do
     member do
-      post 'vote'
+      post "vote"
     end
   end
 
   root "home#index"
 
-    
+  get "home/index"
+
+
   # get "home/index"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
