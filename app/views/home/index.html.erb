@@ -1,14 +1,57 @@
-<div>
-  <h1 class="font-bold text-4xl">Welcome to Rails App</h1>
-  
-  <h3 class="text-3xl pt-10">
-  <%= @greeting %> <!-- Ensure this line is exactly as expected -->
-  </h3>
+<div class="container mx-auto p-6">
+  <!-- Welcome Section -->
+  <section class="text-center mb-10">
+    <h1 class="font-bold text-4xl mb-4">Welcome to Rails App</h1>
+    <h3 class="text-3xl mb-6">
+      <%= @greeting %>
+    </h3>
+    <h2 class="text-2xl mb-10">
+      <%= @current_time.strftime("%B %d, %Y %I:%M:%S %p") %>
+    </h2>
+ </section>
 
-  <h2 class="text-2xl mb-10"><%= @current_time.strftime("%B %d, %Y %I:%M:%S %p")%> </h2>
+  <!-- About Ruby on Rails -->
+  <section id="features" class="mb-10">
+    <h2 class="text-3xl font-bold mb-6">About Ruby on Rails</h2>
+    <p class="text-lg mb-4">
+      Ruby on Rails, often simply called Rails, is a powerful web application framework written in Ruby. It emphasizes convention over configuration (CoC) and the DRY (Don't Repeat Yourself) principle, which helps developers build applications faster and more efficiently.
+    </p>
+    <ul class="list-disc list-inside mb-4">
+      <li><strong>Convention Over Configuration:</strong> Rails provides default conventions for many aspects of application development, reducing the need for configuration and allowing developers to focus on writing code.</li>
+      <li><strong>DRY Principle:</strong> Rails encourages developers to avoid code duplication by using reusable components and adhering to best practices.</li>
+      <li><strong>Active Record:</strong> Rails includes an Object-Relational Mapping (ORM) layer called Active Record, which simplifies database interactions and allows you to work with database records as Ruby objects.</li>
+      <li><strong>Scaffolding:</strong> Rails provides scaffolding features that automatically generate code for common tasks, such as creating CRUD (Create, Read, Update, Delete) interfaces for models.</li>
+      <li><strong>Built-in Testing:</strong> Rails includes built-in testing frameworks that facilitate test-driven development (TDD) and behavior-driven development (BDD).</li>
+      <li><strong>Gems and Plugins:</strong> Rails has a rich ecosystem of libraries (gems) and plugins that extend its functionality, making it easy to add features to your application.</li>
+    </ul>
+    <%= link_to 'Explore More About Rails', 'https://rubyonrails.org/', target: '_blank', class: 'text-blue-500 font-bold' %>
+  </section>
 
+  <!-- About Ruby -->
+  <section class="mb-10">
+    <h2 class="text-3xl font-bold mb-6">About Ruby</h2>
+    <p class="text-lg mb-4">
+      Ruby is a dynamic, open-source programming language known for its simplicity and productivity. It was designed with a focus on simplicity and productivity, and it is the language behind the Rails framework.
+    </p>
+    <ul class="list-disc list-inside mb-4">
+      <li><strong>Dynamic Typing:</strong> Ruby is dynamically typed, meaning that you don't need to declare the type of a variable before using it.</li>
+      <li><strong>Object-Oriented:</strong> Everything in Ruby is an object, including primitive data types, which allows for more flexible and powerful programming.</li>
+      <li><strong>Readable Syntax:</strong> Ruby's syntax is designed to be intuitive and human-readable, making it easy for developers to write and understand code.</li>
+      <li><strong>Metaprogramming:</strong> Ruby supports metaprogramming, allowing developers to write code that can modify or extend itself during runtime.</li>
+      <li><strong>Active Community:</strong> Ruby has an active and supportive community that contributes to a rich ecosystem of libraries and tools.</li>
+    </ul>
+    <%= link_to 'Learn More About Ruby', 'https://www.ruby-lang.org/en/', target: '_blank', class: 'text-blue-500 font-bold' %>
+  </section>
 
+  <section class="text-center mb-10">
+    <div class="bg-white border border-black shadow-lg rounded-lg p-6 max-w-md mx-auto">
+      <h2 class="text-3xl font-bold mb-4">Polls Example</h2>
+      <p class="text-lg mb-6">
+        Polls Made with Ruby on Rails
+      </p>
+      <%= link_to 'Check It Out', polls_path, class: 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded' %>
+    </div>
+  </section>
 
-<%= link_to 'View All Polls', polls_path, class: 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded' %>
-
+ 
 </div>
